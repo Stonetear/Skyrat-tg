@@ -80,7 +80,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	slot_flags = ITEM_SLOT_ID
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 100, ACID = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 	/// Cached icon that has been built for this card. Intended for use in chat.
@@ -174,12 +174,8 @@
 		return FALSE
 
 	var/wildcard_allocated
-	var/datum/id_trim/try_trim = ispath(trim) ? SSid_access.trim_singletons_by_path[trim] : trim
-
-	var/list/wildcard_overrides = try_trim?.get_common_wildcard_overrides()
-
 	for(var/wildcard in wildcard_list)
-		var/wildcard_flag = (wildcard in wildcard_overrides) ? ACCESS_FLAG_COMMON : SSid_access.get_access_flag(wildcard)
+		var/wildcard_flag = SSid_access.get_access_flag(wildcard)
 		wildcard_allocated = FALSE
 		for(var/flag_name in new_wildcard_limits)
 			var/limit_flags = SSid_access.wildcard_flags_by_wildcard[flag_name]
@@ -206,13 +202,9 @@
  */
 /obj/item/card/id/proc/add_wildcards(list/wildcard_list, try_wildcard = null, mode = ERROR_ON_FAIL)
 	var/wildcard_allocated
-
-	var/list/wildcard_overrides = trim?.get_common_wildcard_overrides()
-
 	// Iterate through each wildcard in our list. Get its access flag. Then iterate over wildcard slots and try to fit it in.
 	for(var/wildcard in wildcard_list)
-		var/wildcard_flag = (wildcard in wildcard_overrides) ? ACCESS_FLAG_COMMON : SSid_access.get_access_flag(wildcard)
-
+		var/wildcard_flag = SSid_access.get_access_flag(wildcard)
 		wildcard_allocated = FALSE
 		for(var/flag_name in wildcard_slots)
 			if(flag_name == WILDCARD_NAME_FORCED)
@@ -818,7 +810,7 @@
 			var/obj/item/modular_computer/tablet/slot_holder = slot.holder
 			UnregisterSignal(slot_holder, list(COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_DROPPED))
 
-	if(istype(loc, /obj/item/pda) || istype(OldLoc, /obj/item/storage/wallet))
+	if(istype(loc, /obj/item/pda) || istype(loc, /obj/item/storage/wallet))
 		RegisterSignal(loc, COMSIG_ITEM_EQUIPPED, .proc/update_intern_status)
 		RegisterSignal(loc, COMSIG_ITEM_DROPPED, .proc/remove_intern_status)
 
