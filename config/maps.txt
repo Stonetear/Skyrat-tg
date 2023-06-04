@@ -57,3 +57,7 @@ map voidraptor
 	maxplayers 100
 	votable
 endmap
+
+map prisonstation
+	default
+endmap

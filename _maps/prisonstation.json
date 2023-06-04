@@ -1,0 +1,93 @@
+{
+	"version": 1,
+	"map_name": "Prison Station 6",
+	"map_path": "map_files/Prisonstation",
+	"map_file": "prisonstation.dmm",
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"planetary": 1,
+	"shuttles": {
+		"emergency": "emergency_skyrat",
+		"ferry": "ferry_skyrat",
+		"mining": "mining_large_skyrat",
+		"cargo": "cargo_delta_skyrat",
+		"whiteship": "whiteship_delta"
+	},
+	"ignored_unit_tests": [
+		"/datum/unit_test/job_roundstart_spawnpoints",
+		"/datum/unit_test/required_map_items"
+	],
+	"traits": [
+		{
+			"Up": 1,
+			"Mining": true,
+			"Linkage": null,
+			"Gravity": true,
+			"Ice Ruins": true,
+			"Baseturf": "/turf/open/lava/plasma/ice_moon",
+			"No Parallax": true
+		},
+		{
+			"Down": -1,
+			"Up": 1,
+			"Mining": true,
+			"Linkage": null,
+			"Gravity": true,
+			"Ice Ruins": true,
+			"Baseturf": "/turf/open/openspace",
+			"No Parallax": true
+		},
+		{
+			"Down": -1,
+			"Mining": true,
+			"Linkage": null,
+			"Gravity": true,
+			"Weather_Snowstorm": true,
+			"Baseturf": "/turf/open/openspace",
+			"No Parallax": true
+		}
+	],
+	"job_changes": {
+		"Station Engineer": {
+			"total_positions": 0
+		},"Warden": {
+			"total_positions": 0
+		},"Detective": {
+			"total_positions": 0
+		},"Security Officer": {
+			"total_positions": 0
+		},"Corrections Officer": {
+			"total_positions": 0
+		},"Security Medic": {
+			"total_positions": 0
+		},"Atmospheric Technician": {
+			"total_positions": 0
+		},"Engineering Guard": {
+			"total_positions": 0
+		},"Medical Doctor": {
+			"total_positions": 0
+		},"Paramedic": {
+			"total_positions": 0
+		},"Chemist": {
+			"total_positions": 0
+		},"Virologist": {
+			"total_positions": 0
+		},"Orderly": {
+			"total_positions": 0
+		},"Scientist": {
+			"total_positions": 0
+		},"Roboticist": {
+			"total_positions": 0
+		},"Geneticist": {
+			"total_positions": 0
+		},"Science Guard": {
+			"total_positions": 0
+		},"Quartermaster": {
+			"total_positions": 0
+		},"Cargo Technician": {
+			"total_positions": 0
+		},"Shaft Miner": {
+			"total_positions": 0
+		}
+	}
+}
