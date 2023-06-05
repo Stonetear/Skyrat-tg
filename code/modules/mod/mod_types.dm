@@ -53,6 +53,7 @@
 		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/magboot,
+		/obj/item/mod/module/suit_item_holder/jetpack // SKYRAT EDIT ADDITION
 	)
 	default_pins = list(
 		/obj/item/mod/module/magboot,

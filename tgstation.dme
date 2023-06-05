@@ -6549,6 +6549,7 @@
 #include "modular_skyrat\modules\Midroundtraitor\code\event.dm"
 #include "modular_skyrat\modules\mining_vendor_additions\code\order_mining.dm"
 #include "modular_skyrat\modules\modsuit_armour\modsuit_armour.dm"
+#include "modular_skyrat\modules\modsuit_modular\code\modules.dm"
 #include "modular_skyrat\modules\modsuit_pai\code\mod_pai.dm"
 #include "modular_skyrat\modules\modular_ert\code\engineer\engineer.dm"
 #include "modular_skyrat\modules\modular_ert\code\fumigators\ert.dm"
